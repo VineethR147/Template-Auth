@@ -9,8 +9,6 @@ app.config['SECRET_KEY'] ='1'
 def login():
 	form= LoginForm()
 	if form.validate_on_submit():
-		if request.cookies.get('admin') == "true":
-			flash(f'flag{cookies_are_fun}')
 		flash(f'Successfullylogged in as  {form.username.data}!','success')
 	return render_template('login.html',form=form)
 
